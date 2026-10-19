@@ -1,34 +1,33 @@
 from dataclasses import dataclass, field
 
+OUT = -1
+
 @dataclass(frozen=True)
 class Vehicle:
-    id:str
-    w:int
-    l:int
-    shippingFee: int
-    weight:int
+    id: str
+    w: int
+    l: int
+    fee: int
+    weight: int
     eta: int
-    orientation: bool
 
 @dataclass(frozen=True)
 class Ship:
-    w:int
-    l:int
-    maxCapacity:int
+    id: str
+    w: int
+    l: int
+    max_capacity: int
 
 class Problem:
     def __init__(self, vehicles, ships, mode="fee"):
         self.vehicles = vehicles
         self.ships = ships
-        self.mode= mode
-        self._pen= {}
+        self.mode = mode
+        self._pen = {}
 
     def footprint(self, i, o):
-        v= self.vehicles[i]
-        if o==0:
-            return (v.w,v.l)
-        else:
-            return (v.l,v.w)
+        v = self.vehicles[i]
+        return (v.w, v.l) if o == 0 else (v.l, v.w)
 
 @dataclass
 class Result:
