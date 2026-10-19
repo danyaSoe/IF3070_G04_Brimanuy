@@ -20,6 +20,12 @@ class Ship:
 
 class Problem:
     def __init__(self, vehicles, ships, mode="fee"):
+        if not vehicles:
+            raise ValueError("Problem harus memiliki minimal satu kendaraan.")
+        if not ships:
+            raise ValueError("Problem harus memiliki minimal satu kapal.")
+        if mode not in ("fee", "urgency", "area"):
+            raise ValueError(f"Mode objective tidak dikenal: {mode}")
         self.vehicles = vehicles
         self.ships = ships
         self.mode = mode

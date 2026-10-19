@@ -1,0 +1,14 @@
+{
+  "vehicles": [
+    {"id": "V0", "w": 4, "l": 4, "fee": 15, "weight": 7, "eta": 7},
+    {"id": "V1", "w": 4, "l": 3, "fee": 71, "weight": 8, "eta": 3},
+    {"id": "V2", "w": 2, "l": 3, "fee": 27, "weight": 15, "eta": 1},
+    {"id": "V3", "w": 3, "l": 5, "fee": 100, "weight": 15, "eta": 2},
+    {"id": "V4", "w": 3, "l": 1, "fee": 19, "weight": 13, "eta": 5},
+    {"id": "V5", "w": 4, "l": 5, "fee": 22, "weight": 8, "eta": 6}
+  ],
+  "ships": [
+    {"id": "Ship0", "w": 10, "l": 20, "max_capacity": 30},
+    {"id": "Ship1", "w": 10, "l": 20, "max_capacity": 30}
+  ]
+}
