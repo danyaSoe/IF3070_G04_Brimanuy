@@ -1,11 +1,11 @@
 import argparse
 import random
+from inspect import Parameter, signature
 from pathlib import Path
 
 from core.io import load_problem
 from core.neighbors import random_state
-from core.utils import run_n, summarize
-from core.viz import draw_state, plot_curves
+from core.utils import summarize
 from algorithms.hill_climbing import (
     random_restart,
     sideways_move,
@@ -13,8 +13,16 @@ from algorithms.hill_climbing import (
     stochastic_hc,
 )
 from algorithms.simulated_annealing import simulated_annealing
+from experiments.common import (
+    PROJECT_ROOT,
+    resolve_case,
+    result_row,
+    save_result,
+    summarize_rows,
+    write_csv,
+    write_json,
+)
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
 ALGOS = {
     "steepest": (steepest_ascent, {}),
     "sideways": (sideways_move, {"max_sideways": 100}),
@@ -25,30 +33,38 @@ ALGOS = {
 
 
 def run_local_experiments(case, output_dir, mode="fee", runs=3, no_plots=False):
-    output_dir.mkdir(parents=True, exist_ok=True)
+    case = resolve_case(case)
+    output_dir = Path(output_dir)
     problem = load_problem(case, mode)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    (output_dir / "input_case.json").write_bytes(case.read_bytes())
+    rows = []
     for name, (fn, kw) in ALGOS.items():
+        params = {
+            key: parameter.default
+            for key, parameter in signature(fn).parameters.items()
+            if parameter.default is not Parameter.empty and key != "rng"
+        }
+        params.update(kw)
         for seed in range(runs):
             rng = random.Random(seed)
             result = fn(problem, random_state(problem, rng), rng, **kw)
             results = [result]
-            summarize(name, results, problem)
-            if no_plots:
-                continue
-            draw_state(problem, result.initial_state, f"{name} run{seed} INITIAL",
-                       save=output_dir / f"{name}_{seed}_init.png")
-            draw_state(problem, result.final_state, f"{name} run{seed} FINAL",
-                       save=output_dir / f"{name}_{seed}_final.png")
-            plot_curves({"objective": result.history}, f"{name} run{seed}",
-                        "iterasi", "objective",
-                        output_dir / f"{name}_{seed}_curve.png")
-            if name == "sa" and result.extras["probs"]:
-                plot_curves(
-                    {"e^(ΔE/T)": [p for _, p in result.extras["probs"]]},
-                    f"SA run{seed}", "iterasi (langkah memburuk)",
-                    "e^(ΔE/T)", output_dir / f"sa_{seed}_prob.png",
-                )
-                print("  stuck:", result.extras["stuck"])
+            summarize(f"{name} seed={seed}", results, problem)
+            payload = save_result(
+                problem, result, output_dir / name / f"seed_{seed}",
+                case_path=case, seed=seed, config=name, params=params,
+                group="local", plots=not no_plots,
+            )
+            rows.append(result_row(payload))
+            write_csv(output_dir / "runs.csv", rows)
+            if name == "sa":
+                print("  rejected_candidates:", result.extras.get("stuck", 0))
+    summary = summarize_rows(rows)
+    write_csv(output_dir / "summary.csv", summary)
+    write_json(output_dir / "summary.json", summary)
+    print(f"Selesai: {len(rows)} run. Hasil: {output_dir.resolve()}")
+    return rows
 
 
 def main(argv=None):
