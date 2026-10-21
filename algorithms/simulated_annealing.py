@@ -1,19 +1,21 @@
 import math, time
-from core.models import Result
-from core.objective import evaluate
+from core.models import OUT, Result
+from core.objective import evaluate, is_feasible
 from core.neighbors import random_neighbor, all_neighbors
-
 
 def is_local_optimum(problem, state, value):
     # True jika tidak ada neighbor yang nilainya lebih baik dari state saat ini.
     return not any(evaluate(problem, nb) > value for nb in all_neighbors(problem, state))
-
 
 def simulated_annealing(problem, init, rng, T0=60.0, alpha=0.999, T_min=0.01,
                         max_iter=100000, check_every=50):
     t0 = time.time()
     cur, cur_v = init[:], evaluate(problem, init)
     best, best_v = cur, cur_v
+
+    best_feasible = cur[:] if is_feasible(problem, cur) else None
+    best_feasible_v = cur_v if best_feasible is not None else -math.inf
+
     hist, probs, rejected_worse = [cur_v], [], 0
     lo_checks, lo_hits, lo_log, t_check = 0, 0, [], 0.0
     T, it = T0, 0
@@ -31,25 +33,34 @@ def simulated_annealing(problem, init, rng, T0=60.0, alpha=0.999, T_min=0.01,
                 rejected_worse += 1
         if accept:
             cur, cur_v = nb, v
-        if cur_v > best_v:
-            best, best_v = cur, cur_v
-        hist.append(cur_v)
+            if cur_v > best_v:
+                best, best_v = cur, cur_v
+            if cur_v > best_feasible_v and is_feasible(problem, cur):
+                best_feasible, best_feasible_v = cur[:], cur_v
 
+        hist.append(cur_v)
         # cek local optimum sungguhan tiap check_every iterasi
         if check_every and it % check_every == 0:
             s = time.time()
             lo_checks += 1
             if is_local_optimum(problem, cur, cur_v):
                 lo_hits += 1
-                lo_log.append((it, cur_v, T))   # (iterasi, nilai, suhu)
+                lo_log.append((it, cur_v, T)) # (iterasi, nilai, suhu)
             t_check += time.time() - s
-
         T *= alpha
     # durasi tidak menghitung waktu pengecekan local optimum
     duration = time.time() - t0 - t_check
+
+    fallback_used = best_feasible is None
+    final = ([(OUT, 0, 0, p[3]) for p in init]
+             if fallback_used else best_feasible)
+    final_v = evaluate(problem, final)
+
     return Result(
-        "sa", init, best, best_v, hist, it, duration,
+        "sa", init, final, final_v, hist, it, duration,
         {"probs": probs, "rejected_worse": rejected_worse,
          "lo_checks": lo_checks, "lo_hits": lo_hits, "lo_log": lo_log,
-         "check_every": check_every, "T0": T0, "alpha": alpha}
+         "check_every": check_every, "T0": T0, "alpha": alpha,
+         "best_raw_state": best[:], "best_raw_value": best_v,
+         "fallback_used": fallback_used} 
     )

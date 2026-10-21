@@ -23,26 +23,41 @@ def random_placement(problem, i, rng, p_out=0.3, orientation=None):
 def random_state(problem, rng):    # initial state random
     return [random_placement(problem, i, rng) for i in range(len(problem.vehicles))]
 
-def random_neighbor(problem, state, rng):   # 1 neighbor acak (SA, stochastic, GA mutasi)
-    new = state[:]; n = len(state)
-    kind = rng.choice(("move", "swap", "rotate"))
-    if kind == "swap" and n >= 2:
-        i, j = rng.sample(range(n), 2)
-        (si, xi, yi, oi), (sj, xj, yj, oj) = state[i], state[j]
-        pi, pj = (sj, xj, yj, oi), (si, xi, yi, oj)
-        if _within_bounds(problem, i, pi) and _within_bounds(problem, j, pj):
-            new[i], new[j] = pi, pj
-    elif kind == "rotate":
-        i = rng.randrange(n); s, x, y, o = state[i]
-        placement = (s, x, y, 1 - o)
-        if _within_bounds(problem, i, placement):
-            new[i] = placement
-    else:
-        i = rng.randrange(n)
-        new[i] = random_placement(problem, i, rng, orientation=state[i][3])
-    return new
 
-def all_neighbors(problem, state):    # semua neighbor (steepest ascent)
+def random_neighbor(problem, state, rng):
+    n = len(state)
+
+    for _ in range(20): 
+        new = state[:]
+        kind = rng.choice(("move", "swap", "rotate"))
+
+        if kind == "swap" and n >= 2:
+            i, j = rng.sample(range(n), 2)
+            (si, xi, yi, oi), (sj, xj, yj, oj) = state[i], state[j]
+            pi, pj = (sj, xj, yj, oi), (si, xi, yi, oj)
+            if _within_bounds(problem, i, pi) and _within_bounds(problem, j, pj):
+                new[i], new[j] = pi, pj
+
+        elif kind == "rotate":
+            i = rng.randrange(n); s, x, y, o = state[i]
+            placement = (s, x, y, 1 - o)
+            if _within_bounds(problem, i, placement):
+                new[i] = placement
+                
+        else:
+            i = rng.randrange(n)
+            new[i] = random_placement(
+                problem, i, rng, orientation=state[i][3]
+            )
+        if new != state: 
+            return new
+        
+    return next(
+        (nb for nb in all_neighbors(problem, state) if nb != state),
+        state[:]
+    )
+
+def all_neighbors(problem, state):
     n = len(state)
     for i in range(n):
         s, x, y, o = state[i]
