@@ -48,13 +48,13 @@ def simulated_annealing(problem, init, rng, T0=60.0, alpha=0.999, T_min=0.01,
                 lo_log.append((it, cur_v, T)) # (iterasi, nilai, suhu)
             t_check += time.time() - s
         T *= alpha
-    # durasi tidak menghitung waktu pengecekan local optimum
-    duration = time.time() - t0 - t_check
-
+   
     fallback_used = best_feasible is None
     final = ([(OUT, 0, 0, p[3]) for p in init]
              if fallback_used else best_feasible)
     final_v = evaluate(problem, final)
+
+    duration = time.time() - t0
 
     return Result(
         "sa", init, final, final_v, hist, it, duration,
@@ -62,5 +62,7 @@ def simulated_annealing(problem, init, rng, T0=60.0, alpha=0.999, T_min=0.01,
          "lo_checks": lo_checks, "lo_hits": lo_hits, "lo_log": lo_log,
          "check_every": check_every, "T0": T0, "alpha": alpha,
          "best_raw_state": best[:], "best_raw_value": best_v,
-         "fallback_used": fallback_used} 
+         "fallback_used": fallback_used,
+         "local_optimum_check_seconds": t_check,
+         "search_duration_seconds": max(0.0, duration - t_check)}
     )
