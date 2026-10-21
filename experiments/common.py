@@ -143,6 +143,14 @@ def result_row(payload):
         "duration_seconds": payload["duration"], "upper_bound": payload["upper_bound"],
         "gap_to_bound_pct": payload["gap_to_bound_pct"],
         "fallback_used": payload["extras"].get("fallback_used", False),
+        "lo_hits": payload["extras"].get("lo_hits", ""),
+        "lo_checks": payload["extras"].get("lo_checks", ""),
+        "lo_hit_rate": (
+            payload["extras"]["lo_hits"] /
+            payload["extras"]["lo_checks"]
+            if payload["extras"].get("lo_checks", 0) > 0
+            else ""
+        ),
         "parameters": json.dumps(params, sort_keys=True),
     }
 
