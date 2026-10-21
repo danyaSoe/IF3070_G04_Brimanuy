@@ -48,7 +48,8 @@ def run_local_experiments(case, output_dir, mode="fee", runs=3, no_plots=False):
                     f"SA run{seed}", "iterasi (langkah memburuk)",
                     "e^(ΔE/T)", output_dir / f"sa_{seed}_prob.png",
                 )
-                print("  stuck:", result.extras["stuck"])
+                print("  rejected_worse:", result.extras["rejected_worse"])
+                print("  stuck di local optimum:", result.extras["lo_hits"], "/", result.extras["lo_checks"])
 
 
 def main(argv=None):
