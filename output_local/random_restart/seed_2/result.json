@@ -1,0 +1,501 @@
+{
+  "schema_version": 1,
+  "name": "random_restart",
+  "initial_state": [
+    [
+      -1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      4,
+      6,
+      1
+    ],
+    [
+      0,
+      6,
+      12,
+      0
+    ],
+    [
+      0,
+      4,
+      8,
+      1
+    ],
+    [
+      0,
+      7,
+      10,
+      0
+    ],
+    [
+      0,
+      4,
+      5,
+      1
+    ],
+    [
+      -1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      4,
+      11,
+      0
+    ],
+    [
+      0,
+      6,
+      16,
+      0
+    ],
+    [
+      0,
+      5,
+      14,
+      1
+    ],
+    [
+      0,
+      7,
+      16,
+      0
+    ],
+    [
+      0,
+      8,
+      11,
+      0
+    ],
+    [
+      0,
+      2,
+      17,
+      1
+    ],
+    [
+      0,
+      5,
+      5,
+      1
+    ],
+    [
+      0,
+      2,
+      9,
+      1
+    ]
+  ],
+  "final_state": [
+    [
+      0,
+      5,
+      11,
+      0
+    ],
+    [
+      0,
+      0,
+      10,
+      0
+    ],
+    [
+      -1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      4,
+      8,
+      1
+    ],
+    [
+      -1,
+      0,
+      0,
+      1
+    ],
+    [
+      -1,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      5,
+      5,
+      1
+    ],
+    [
+      0,
+      0,
+      15,
+      0
+    ],
+    [
+      0,
+      1,
+      7,
+      1
+    ],
+    [
+      0,
+      7,
+      16,
+      1
+    ],
+    [
+      0,
+      4,
+      13,
+      0
+    ],
+    [
+      0,
+      0,
+      5,
+      1
+    ],
+    [
+      0,
+      4,
+      2,
+      1
+    ],
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      -1,
+      0,
+      0,
+      0
+    ]
+  ],
+  "final_value": 762.0,
+  "history": [
+    -7638.0,
+    -5011.0,
+    -2527.0,
+    -881.0,
+    -73.0,
+    230.0,
+    533.0,
+    603.0,
+    681.0,
+    -4744.0,
+    -1938.0,
+    -918.0,
+    -211.0,
+    100.0,
+    302.0,
+    504.0,
+    580.0,
+    653.0,
+    684.0,
+    727.0,
+    747.0,
+    -1130.0,
+    183.0,
+    398.0,
+    498.0,
+    589.0,
+    656.0,
+    712.0,
+    733.0,
+    747.0,
+    762.0,
+    -1360.0,
+    -451.0,
+    368.0,
+    517.0,
+    617.0,
+    697.0,
+    747.0,
+    762.0,
+    -376.0,
+    -69.0,
+    234.0,
+    537.0,
+    637.0,
+    642.0,
+    682.0,
+    725.0,
+    -6694.0,
+    -4594.0,
+    -2500.0,
+    -1310.0,
+    -401.0,
+    205.0,
+    609.0,
+    690.0,
+    762.0,
+    -712.0,
+    399.0,
+    601.0,
+    681.0,
+    725.0,
+    740.0,
+    -9095.0,
+    -6289.0,
+    -3906.0,
+    -1812.0,
+    -845.0,
+    -127.0,
+    479.0,
+    580.0,
+    647.0,
+    675.0,
+    695.0,
+    -6554.0,
+    -4129.0,
+    -1847.0,
+    -777.0,
+    -171.0,
+    233.0,
+    536.0,
+    601.0,
+    615.0,
+    644.0,
+    -641.0,
+    610.0,
+    682.0,
+    725.0,
+    733.0,
+    -9062.0,
+    -6536.0,
+    -4153.0,
+    -2053.0,
+    -740.0,
+    -134.0,
+    349.0,
+    652.0
+  ],
+  "iterations": 85,
+  "duration": 6.6369147300720215,
+  "extras": {
+    "restarts": 10,
+    "iters_per_restart": [
+      8,
+      11,
+      9,
+      7,
+      7,
+      8,
+      5,
+      10,
+      9,
+      4,
+      7
+    ]
+  },
+  "metadata": {
+    "case": "case1.json",
+    "case_sha256": "5321637224066f278f89654795400c26025d689dedd59801106ea1764c7aecce",
+    "mode": "fee",
+    "seed": 2,
+    "config": "random_restart",
+    "group": "local",
+    "parameters": {
+      "max_restart": 10
+    },
+    "python": "3.12.6",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "created_utc": "2026-10-21T15:31:46.851998+00:00",
+    "duration_scope": "algorithm_only_excludes_plotting_and_file_io"
+  },
+  "initial_mapping": {
+    "V0": {
+      "status": "outside",
+      "orientation": "H"
+    },
+    "V1": {
+      "ship": "Ship0",
+      "x": 4,
+      "y": 6,
+      "orientation": "Vertical"
+    },
+    "V2": {
+      "ship": "Ship0",
+      "x": 6,
+      "y": 12,
+      "orientation": "Horizontal"
+    },
+    "V3": {
+      "ship": "Ship0",
+      "x": 4,
+      "y": 8,
+      "orientation": "Vertical"
+    },
+    "V4": {
+      "ship": "Ship0",
+      "x": 7,
+      "y": 10,
+      "orientation": "Horizontal"
+    },
+    "V5": {
+      "ship": "Ship0",
+      "x": 4,
+      "y": 5,
+      "orientation": "Vertical"
+    },
+    "V6": {
+      "status": "outside",
+      "orientation": "H"
+    },
+    "V7": {
+      "ship": "Ship0",
+      "x": 4,
+      "y": 11,
+      "orientation": "Horizontal"
+    },
+    "V8": {
+      "ship": "Ship0",
+      "x": 6,
+      "y": 16,
+      "orientation": "Horizontal"
+    },
+    "V9": {
+      "ship": "Ship0",
+      "x": 5,
+      "y": 14,
+      "orientation": "Vertical"
+    },
+    "V10": {
+      "ship": "Ship0",
+      "x": 7,
+      "y": 16,
+      "orientation": "Horizontal"
+    },
+    "V11": {
+      "ship": "Ship0",
+      "x": 8,
+      "y": 11,
+      "orientation": "Horizontal"
+    },
+    "V12": {
+      "ship": "Ship0",
+      "x": 2,
+      "y": 17,
+      "orientation": "Vertical"
+    },
+    "V13": {
+      "ship": "Ship0",
+      "x": 5,
+      "y": 5,
+      "orientation": "Vertical"
+    },
+    "V14": {
+      "ship": "Ship0",
+      "x": 2,
+      "y": 9,
+      "orientation": "Vertical"
+    }
+  },
+  "final_mapping": {
+    "V0": {
+      "ship": "Ship0",
+      "x": 5,
+      "y": 11,
+      "orientation": "Horizontal"
+    },
+    "V1": {
+      "ship": "Ship0",
+      "x": 0,
+      "y": 10,
+      "orientation": "Horizontal"
+    },
+    "V2": {
+      "status": "outside",
+      "orientation": "H"
+    },
+    "V3": {
+      "ship": "Ship0",
+      "x": 4,
+      "y": 8,
+      "orientation": "Vertical"
+    },
+    "V4": {
+      "status": "outside",
+      "orientation": "V"
+    },
+    "V5": {
+      "status": "outside",
+      "orientation": "V"
+    },
+    "V6": {
+      "ship": "Ship0",
+      "x": 5,
+      "y": 5,
+      "orientation": "Vertical"
+    },
+    "V7": {
+      "ship": "Ship0",
+      "x": 0,
+      "y": 15,
+      "orientation": "Horizontal"
+    },
+    "V8": {
+      "ship": "Ship0",
+      "x": 1,
+      "y": 7,
+      "orientation": "Vertical"
+    },
+    "V9": {
+      "ship": "Ship0",
+      "x": 7,
+      "y": 16,
+      "orientation": "Vertical"
+    },
+    "V10": {
+      "ship": "Ship0",
+      "x": 4,
+      "y": 13,
+      "orientation": "Horizontal"
+    },
+    "V11": {
+      "ship": "Ship0",
+      "x": 0,
+      "y": 5,
+      "orientation": "Vertical"
+    },
+    "V12": {
+      "ship": "Ship0",
+      "x": 4,
+      "y": 2,
+      "orientation": "Vertical"
+    },
+    "V13": {
+      "ship": "Ship0",
+      "x": 1,
+      "y": 1,
+      "orientation": "Horizontal"
+    },
+    "V14": {
+      "status": "outside",
+      "orientation": "H"
+    }
+  },
+  "initial_value": -7638.0,
+  "final_score_before_penalty": 762.0,
+  "final_penalty": 0.0,
+  "feasible": true,
+  "shipping_fee": 762,
+  "loaded_vehicles": 11,
+  "loaded_weight": 90,
+  "upper_bound": 766.25,
+  "gap_to_bound_pct": 0.5546492659053833
+}

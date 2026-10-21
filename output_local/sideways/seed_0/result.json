@@ -1,0 +1,532 @@
+{
+  "schema_version": 1,
+  "name": "sideways",
+  "initial_state": [
+    [
+      0,
+      0,
+      8,
+      1
+    ],
+    [
+      0,
+      7,
+      11,
+      1
+    ],
+    [
+      0,
+      2,
+      3,
+      0
+    ],
+    [
+      0,
+      2,
+      3,
+      1
+    ],
+    [
+      0,
+      7,
+      17,
+      0
+    ],
+    [
+      0,
+      4,
+      6,
+      0
+    ],
+    [
+      0,
+      0,
+      17,
+      1
+    ],
+    [
+      -1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      4,
+      15,
+      1
+    ],
+    [
+      -1,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      3,
+      18,
+      1
+    ],
+    [
+      -1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      2,
+      0
+    ],
+    [
+      0,
+      1,
+      9,
+      1
+    ],
+    [
+      0,
+      6,
+      17,
+      1
+    ]
+  ],
+  "final_state": [
+    [
+      -1,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      7,
+      11,
+      1
+    ],
+    [
+      -1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      4,
+      3,
+      1
+    ],
+    [
+      -1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      3,
+      11,
+      0
+    ],
+    [
+      0,
+      4,
+      0,
+      1
+    ],
+    [
+      0,
+      4,
+      6,
+      0
+    ],
+    [
+      0,
+      0,
+      8,
+      1
+    ],
+    [
+      -1,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      13,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      9,
+      6,
+      1
+    ],
+    [
+      0,
+      5,
+      17,
+      1
+    ]
+  ],
+  "final_value": 749.0,
+  "history": [
+    -4047.0,
+    -1953.0,
+    -235.0,
+    68.0,
+    371.0,
+    573.0,
+    625.0,
+    646.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    679.0,
+    725.0,
+    747.0,
+    747.0,
+    747.0,
+    747.0,
+    747.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0,
+    749.0
+  ],
+  "iterations": 140,
+  "duration": 12.389029502868652,
+  "extras": {
+    "max_sideways": 100,
+    "sideways_used": 100
+  },
+  "metadata": {
+    "case": "case1.json",
+    "case_sha256": "5321637224066f278f89654795400c26025d689dedd59801106ea1764c7aecce",
+    "mode": "fee",
+    "seed": 0,
+    "config": "sideways",
+    "group": "local",
+    "parameters": {
+      "max_sideways": 100
+    },
+    "python": "3.12.6",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "created_utc": "2026-10-21T15:30:54.683832+00:00",
+    "duration_scope": "algorithm_only_excludes_plotting_and_file_io"
+  },
+  "initial_mapping": {
+    "V0": {
+      "ship": "Ship0",
+      "x": 0,
+      "y": 8,
+      "orientation": "Vertical"
+    },
+    "V1": {
+      "ship": "Ship0",
+      "x": 7,
+      "y": 11,
+      "orientation": "Vertical"
+    },
+    "V2": {
+      "ship": "Ship0",
+      "x": 2,
+      "y": 3,
+      "orientation": "Horizontal"
+    },
+    "V3": {
+      "ship": "Ship0",
+      "x": 2,
+      "y": 3,
+      "orientation": "Vertical"
+    },
+    "V4": {
+      "ship": "Ship0",
+      "x": 7,
+      "y": 17,
+      "orientation": "Horizontal"
+    },
+    "V5": {
+      "ship": "Ship0",
+      "x": 4,
+      "y": 6,
+      "orientation": "Horizontal"
+    },
+    "V6": {
+      "ship": "Ship0",
+      "x": 0,
+      "y": 17,
+      "orientation": "Vertical"
+    },
+    "V7": {
+      "status": "outside",
+      "orientation": "H"
+    },
+    "V8": {
+      "ship": "Ship0",
+      "x": 4,
+      "y": 15,
+      "orientation": "Vertical"
+    },
+    "V9": {
+      "status": "outside",
+      "orientation": "V"
+    },
+    "V10": {
+      "ship": "Ship0",
+      "x": 3,
+      "y": 18,
+      "orientation": "Vertical"
+    },
+    "V11": {
+      "status": "outside",
+      "orientation": "H"
+    },
+    "V12": {
+      "ship": "Ship0",
+      "x": 1,
+      "y": 2,
+      "orientation": "Horizontal"
+    },
+    "V13": {
+      "ship": "Ship0",
+      "x": 1,
+      "y": 9,
+      "orientation": "Vertical"
+    },
+    "V14": {
+      "ship": "Ship0",
+      "x": 6,
+      "y": 17,
+      "orientation": "Vertical"
+    }
+  },
+  "final_mapping": {
+    "V0": {
+      "status": "outside",
+      "orientation": "V"
+    },
+    "V1": {
+      "ship": "Ship0",
+      "x": 7,
+      "y": 11,
+      "orientation": "Vertical"
+    },
+    "V2": {
+      "status": "outside",
+      "orientation": "H"
+    },
+    "V3": {
+      "ship": "Ship0",
+      "x": 4,
+      "y": 3,
+      "orientation": "Vertical"
+    },
+    "V4": {
+      "status": "outside",
+      "orientation": "H"
+    },
+    "V5": {
+      "ship": "Ship0",
+      "x": 3,
+      "y": 11,
+      "orientation": "Horizontal"
+    },
+    "V6": {
+      "ship": "Ship0",
+      "x": 4,
+      "y": 0,
+      "orientation": "Vertical"
+    },
+    "V7": {
+      "ship": "Ship0",
+      "x": 4,
+      "y": 6,
+      "orientation": "Horizontal"
+    },
+    "V8": {
+      "ship": "Ship0",
+      "x": 0,
+      "y": 8,
+      "orientation": "Vertical"
+    },
+    "V9": {
+      "status": "outside",
+      "orientation": "V"
+    },
+    "V10": {
+      "ship": "Ship0",
+      "x": 0,
+      "y": 0,
+      "orientation": "Horizontal"
+    },
+    "V11": {
+      "ship": "Ship0",
+      "x": 1,
+      "y": 13,
+      "orientation": "Horizontal"
+    },
+    "V12": {
+      "ship": "Ship0",
+      "x": 1,
+      "y": 1,
+      "orientation": "Horizontal"
+    },
+    "V13": {
+      "ship": "Ship0",
+      "x": 9,
+      "y": 6,
+      "orientation": "Vertical"
+    },
+    "V14": {
+      "ship": "Ship0",
+      "x": 5,
+      "y": 17,
+      "orientation": "Vertical"
+    }
+  },
+  "initial_value": -4047.0,
+  "final_score_before_penalty": 749.0,
+  "final_penalty": 0.0,
+  "feasible": true,
+  "shipping_fee": 749,
+  "loaded_vehicles": 11,
+  "loaded_weight": 89,
+  "upper_bound": 766.25,
+  "gap_to_bound_pct": 2.2512234910277327
+}
