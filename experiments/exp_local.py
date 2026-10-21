@@ -59,13 +59,14 @@ def run_local_experiments(case, output_dir, mode="fee", runs=3, no_plots=False):
             rows.append(result_row(payload))
             write_csv(output_dir / "runs.csv", rows)
             if name == "sa":
-                print("  rejected_candidates:", result.extras.get("stuck", 0))
+                print("  rejected_worse:", result.extras["rejected_worse"])
+                print("  stuck di local optimum:",
+                      result.extras["lo_hits"], "/", result.extras["lo_checks"])
     summary = summarize_rows(rows)
     write_csv(output_dir / "summary.csv", summary)
     write_json(output_dir / "summary.json", summary)
     print(f"Selesai: {len(rows)} run. Hasil: {output_dir.resolve()}")
     return rows
-
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description="Run local-search experiments.")
