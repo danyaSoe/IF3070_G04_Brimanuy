@@ -98,3 +98,12 @@ src/          Source code aplikasi dan data input
 src/tests/    Automated tests
 output/       Hasil eksperimen (output_GA/ dan output_local/)
 ```
+## Anggota Kelompok dan Pembagian Tugas
+
+Kelompok 04 — Brimanuy
+
+| Nama | NIM | Pembagian Tugas |
+| --- | --- | --- |
+| Danya Damaris | 18224024 | Menyusun laporan BAB I; mengimplementasikan algoritma Hill-Climbing dan Simulated Annealing; menyempurnakan web dashboard. |
+| Lukman Hakim Syah Ardhana | 18224097 | Menyusun laporan BAB III; merapikan laporan BAB II; mengimplementasikan Genetic Algorithm dengan roulette wheel selection; melakukan integrasi akhir. |
+| Jacko Luciano | 18224101 | Menyusun laporan BAB II; mengimplementasikan komponen dasar pada folder core; membuat visualisasi web untuk simulasi; mengimplementasikan dukungan multikapal dan objective function alternatif. |
