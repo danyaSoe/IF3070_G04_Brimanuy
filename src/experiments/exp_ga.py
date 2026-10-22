@@ -11,9 +11,10 @@ from experiments.common import (PROJECT_ROOT, resolve_case, result_row, save_res
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--case", default="data/case1.json")
+    parser.add_argument("--case", default="src/data/case1.json")
     parser.add_argument("--mode", choices=("fee", "urgency", "area"), default="fee")
-    parser.add_argument("--output", type=Path, default=PROJECT_ROOT / "output_GA")
+    parser.add_argument("--output", type=Path,
+                        default=PROJECT_ROOT / "output" / "output_GA")
     parser.add_argument("--seeds", nargs=3, type=int, default=[0, 1, 2])
     parser.add_argument("--populations", nargs=3, type=int, default=[20, 50, 100])
     parser.add_argument("--generation-counts", nargs=3, type=int, default=[50, 150, 400])

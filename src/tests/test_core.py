@@ -51,7 +51,7 @@ def test_state_serialization_supports_multiple_ships(tmp_path):
 
 
 def test_service_returns_multi_ship_summary():
-    result = run_simulation("data/case1.json", "ga", seed=0, parameters={
+    result = run_simulation("src/data/case1.json", "ga", seed=0, parameters={
         "pop_size": 4, "generations": 1, "elitism": 1,
     })
     assert result["feasible"]

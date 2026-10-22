@@ -84,7 +84,7 @@ def test_home_page_contains_visual_dashboard():
 
 def test_simulation_endpoint():
     response = client.post("/api/simulate", json={
-        "case": "data/case1.json",
+        "case": "src/data/case1.json",
         "algorithm": "ga",
         "seed": 0,
         "parameters": {"pop_size": 4, "generations": 1, "elitism": 1},

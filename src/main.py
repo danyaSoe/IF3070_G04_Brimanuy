@@ -2,7 +2,7 @@ import argparse
 from pathlib import Path
 
 
-PROJECT_ROOT = Path(__file__).resolve().parent
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
 
 def main(argv=None):
@@ -12,16 +12,16 @@ def main(argv=None):
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     local = subparsers.add_parser("local", help="Run local-search experiments.")
-    local.add_argument("--case", default="data/case1.json")
+    local.add_argument("--case", default="src/data/case1.json")
     local.add_argument("--mode", choices=("fee", "urgency", "area"), default="fee")
-    local.add_argument("--output", type=Path, default=PROJECT_ROOT / "output_local")
+    local.add_argument("--output", type=Path, default=PROJECT_ROOT / "output" / "output_local")
     local.add_argument("--runs", type=int, default=3)
     local.add_argument("--no-plots", action="store_true")
 
     ga = subparsers.add_parser("ga", help="Run the GA experiment matrix.")
-    ga.add_argument("--case", default="data/case1.json")
+    ga.add_argument("--case", default="src/data/case1.json")
     ga.add_argument("--mode", choices=("fee", "urgency", "area"), default="fee")
-    ga.add_argument("--output", type=Path, default=PROJECT_ROOT / "output_GA")
+    ga.add_argument("--output", type=Path, default=PROJECT_ROOT / "output" / "output_GA")
     ga.add_argument("--no-plots", action="store_true")
 
     web = subparsers.add_parser("web", help="Start the FastAPI web application.")

@@ -70,9 +70,10 @@ def run_local_experiments(case, output_dir, mode="fee", runs=3, no_plots=False):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description="Run local-search experiments.")
-    parser.add_argument("--case", default="data/case1.json")
+    parser.add_argument("--case", default="src/data/case1.json")
     parser.add_argument("--mode", choices=("fee", "urgency", "area"), default="fee")
-    parser.add_argument("--output", type=Path, default=PROJECT_ROOT / "output_local")
+    parser.add_argument("--output", type=Path,
+                        default=PROJECT_ROOT / "output" / "output_local")
     parser.add_argument("--runs", type=int, default=3)
     parser.add_argument("--no-plots", action="store_true")
     args = parser.parse_args(argv)

@@ -2,7 +2,7 @@ import json
 import numpy as np
 import matplotlib.pyplot as plt
 
-with open("output_local/sa/seed_2/result.json") as f:   # sesuaikan nama file
+with open("output/output_local/sa/seed_2/result.json") as f:   # sesuaikan nama file
     data = json.load(f)
 
 v = np.array(data["history"])
@@ -29,4 +29,4 @@ ax[1].legend()
 for a in ax:
     a.grid(True)
 plt.tight_layout()
-plt.savefig("output_local/sa/seed_2/sa_seed2_history.png", dpi=200)
+plt.savefig("output/output_local/sa/seed_2/sa_seed2_history.png", dpi=200)

@@ -4,7 +4,7 @@ from pydantic import BaseModel, Field
 
 
 class SimulationRequest(BaseModel):
-    case: str = "data/case1.json"
+    case: str = "src/data/case1.json"
     algorithm: str = "ga"
     mode: str = "fee"
     seed: int = 0

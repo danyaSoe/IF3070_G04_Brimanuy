@@ -7,7 +7,7 @@ from service.runner import ALGORITHMS, run_simulation
 from web.schemas import SimulationRequest
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 app = FastAPI(title="Brimanuy Cargo Deck Simulator", version="1.0.0")
 
 
@@ -82,8 +82,8 @@ button:hover:not(:disabled){background:#34a7d0;border-color:#34a7d0}
 <body><main class="shell"><header><div><h1>Brimanuy <span>Cargo Deck</span></h1>
 <div class="muted">Local Search Simulator</div></div></header>
 <div id="appLayout" class="dashboard-layout"><div class="left-stack"><section class="panel controls">
-<label>Case JSON<select id="caseSelect"><option value="data/case1.json">case1.json</option>
-<option value="data/case_multi.json">case_multi.json</option></select></label>
+<label>Case JSON<select id="caseSelect"><option value="src/data/case1.json">case1.json</option>
+<option value="src/data/case_multi.json">case_multi.json</option></select></label>
 <label>Algoritma<select id="algorithm" onchange="renderParameters()">
 <option value="ga">Genetic Algorithm</option><option value="sa">Simulated Annealing</option>
 <option value="steepest">Steepest Ascent</option><option value="sideways">Sideways Move</option>

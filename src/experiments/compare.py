@@ -202,7 +202,8 @@ def write_report(path, summaries):
 def main(argv=None):
     parser = argparse.ArgumentParser(description="Bandingkan hasil HC, SA, dan GA yang sudah disimpan.")
     parser.add_argument("--inputs", nargs="+", type=Path,
-                        default=[PROJECT_ROOT / "output_local", PROJECT_ROOT / "output_GA"])
+                        default=[PROJECT_ROOT / "output" / "output_local",
+                                 PROJECT_ROOT / "output" / "output_GA"])
     parser.add_argument("--output", type=Path, default=PROJECT_ROOT / "output" / "comparison")
     parser.add_argument("--no-plots", action="store_true")
     args = parser.parse_args(argv)

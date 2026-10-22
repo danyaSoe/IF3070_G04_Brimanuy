@@ -21,22 +21,22 @@ py -3.12 -m venv venv
 
 ## Menjalankan melalui entry point utama
 
-Local-search experiments (output ke `output_local/`):
+Local-search experiments (output ke `output/output_local/`):
 
 ```powershell
-.\venv\Scripts\python.exe main.py local
+.\venv\Scripts\python.exe src\main.py local
 ```
 
-Genetic Algorithm experiment matrix (output ke `output_GA/`):
+Genetic Algorithm experiment matrix (output ke `output/output_GA/`):
 
 ```powershell
-.\venv\Scripts\python.exe main.py ga --no-plots
+.\venv\Scripts\python.exe src\main.py ga --no-plots
 ```
 
 Menjalankan web interface:
 
 ```powershell
-.\venv\Scripts\python.exe main.py web
+.\venv\Scripts\python.exe src\main.py web
 ```
 
 Buka <http://127.0.0.1:8000>. API tersedia di:
@@ -50,7 +50,7 @@ Contoh request:
 
 ```json
 {
-  "case": "data/case1.json",
+  "case": "src/data/case1.json",
   "algorithm": "ga",
   "mode": "fee",
   "seed": 0,
@@ -87,14 +87,14 @@ endpoint FastAPI.
 ## Struktur project
 
 ```text
-algorithms/   Algoritma local search
-core/         Model, objective, neighbor, I/O, visualisasi
-data/         Case JSON
-experiments/  Runner dan export eksperimen
-service/      Runner bersama CLI dan web
-tests/        Automated tests
-web/          FastAPI app dan halaman simulasi
-main.py       Entry point utama
-output_GA/    Hasil eksperimen GA
-output_local/ Hasil eksperimen local search
+src/          Source code aplikasi dan data input
+  algorithms/ Algoritma local search
+  core/       Model, objective, neighbor, I/O, visualisasi
+  data/       Case JSON
+  experiments/ Runner dan export eksperimen
+  service/    Runner bersama CLI dan web
+  web/        FastAPI app dan halaman simulasi
+  main.py     Entry point utama
+src/tests/    Automated tests
+output/       Hasil eksperimen (output_GA/ dan output_local/)
 ```
